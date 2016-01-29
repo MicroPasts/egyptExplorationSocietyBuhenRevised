@@ -1,0 +1,85 @@
+<div id="modal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h3 class="lead">Egypt Exploration Society Buhen Season 1958</h3>
+            </div>
+
+            <div id="0" class="modal-body" style="display:none">
+                <img src="http://www.ees.ac.uk/images/logo.gif" class="pull-right img-circle" />
+                <p>
+                    This project is an application for the crowd-sourcing of data from archival cards that
+                    have been generated from the Egypt Exploration Society's Buhen digging season 1958. Each card
+                    contains very structured data relating to each object recorded, and these data are what we would
+                    like you to transcribe.
+                </p>
+
+            </div>
+
+            <div id="1" class="modal-body" style="display:none">
+                <p>
+                    The annotated image card below shows you the structured data we would like you to capture:
+                </p>
+
+                <img src="http://micropasts.org/wp-content/uploads/2015/03/ees.png" height="300px" />
+
+                <p>
+                    Therefore the field list we would like is as follows:
+                </p>
+
+                <ol>
+                    <li>Description</li>
+                    <li>Object number</li>
+                    <li>Provenance</li>
+                    <li>Distribution/ Museum sent to</li>
+                    <li>Scale</li>
+                    <li>Your comments</li>
+                </ol>
+
+            </div>
+
+            <div id="2" class="modal-body" style="display:none">
+                <p>
+                    Finally, you may have comments on the index card, if you do, please fill in the final box and then submit
+                    your contribution. Thank you for taking part.
+                </p>
+            </div>
+
+            <div class="modal-footer">
+                <a id="prevBtn" href="#" onclick="showStep('prev')" class="btn btn-default">Previous</a>
+                <a id="nextBtn" href="#" onclick="showStep('next')" class="btn btn-success">Next</a>
+                <a id="startContrib" href="../newtask" class="btn btn-primary" style="display:none"><i class="glyphicon glyphicon-thumbs-up"></i> Let's start!</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var step = -1;
+    function showStep(action) {
+        $("#" + step).hide();
+        if (action == 'next') {
+            step = step + 1;
+        }
+        if (action == 'prev') {
+            step = step - 1;
+        }
+        if (step == 0) {
+            $("#prevBtn").hide();
+        }
+        else {
+            $("#prevBtn").show();
+        }
+
+        if (step == 2 ) {
+            $("#nextBtn").hide();
+            $("#startContrib").show();
+        }
+        $("#" + step).show();
+    }
+
+    showStep('next');
+    $("#modal").modal('show');
+</script>
