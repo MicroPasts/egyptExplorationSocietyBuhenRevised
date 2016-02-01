@@ -2,7 +2,7 @@ Photographic transcription of the Egypt Exploration Society Archives
 ====================================================================
 
 An application for interacting with the Egypt Exploration Society Flickr stream to produce structured, transcribed data
-from their rich image archive.
+from their rich image archive. This version is for the transcription of the Buhen archive.
 
 This application has four files:
 
@@ -69,6 +69,7 @@ Change redundancy of tasks
 ==========================
 
 To update all of them:
+
 ```bash
     $ pbs update-task-redundancy --redundancy 3
 ```

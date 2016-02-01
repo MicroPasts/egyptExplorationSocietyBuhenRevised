@@ -12,6 +12,7 @@
 <!-- jquery form serializer -->
 <script src="/static/js/vendor/jquery.serializeJSON.min.js" type="text/javascript"></script>
 
+<!-- The survey tasks -->
 <div id="survey" class="modal fade" data-backdrop="static">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -66,6 +67,9 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
+<!-- End of survey code -->
+
+<!-- Old browser alerts -->
 <div style="display:none;margin-top:15px; height:500px;" id="oldbrowser" class="row">
     <!-- Success and Error Messages for the user -->
     <div class="col-md-8 col-md-offset-1 alert alert-info">
@@ -129,29 +133,37 @@
 
     <!-- Start of Question and Submission DIV -->
 
-    <!-- The button groups -->
+    <!-- The button groups and toolbar above the image -->
     <div class="btn-group pull-right">
+        <!-- Tutorial -->
         <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal"><i
                 class="glyphicon glyphicon-eye-open"></i> Tutorial
         </button>
+        <!-- Forum help -->
         <a class="btn btn-info btn-sm" id="imgLink" target="_blank" data-toggle="tooltip" data-placement="top"
            title="Opens in a new window" href="http://community.micropasts.org/category/crowd-sourcing-support"><i
                 class="glyphicon glyphicon-book"></i> Community Help</a>
+        <!-- Overlay image -->
         <a id="raw" href="" class="btn btn-sm btn-info fancybox"><i class="glyphicon glyphicon-picture"></i> Overlay</a>
+        <!-- Link to flickr -->
         <a id="flickr" rel="tooltip" target="_blank" data-toggle="tooltip" data-placement="top"
            title="Opens in a new window" href="" class="btn btn-sm btn-info"><i class="icon icon-flickr"></i> View on
             Flickr</a>
+        <!-- Download the image from flickr -->
         <a id="down" rel="tooltip" data-toggle="tooltip" data-placement="top" title="Only works for compliant browsers"
            download="" href="" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-download"></i> Download</a>
     </div>
 
+    <!-- A loading button to alert user if there is an image being parsed -->
     <div class="btn-group">
         <button id="status" type="button" class="btn btn-default btn-type disabled" name="loading" value="loading">
             Loading photo
         </button>
     </div>
+    <!-- End of loading button -->
+
     <div class="row">
-        <!-- Start of Photo DIV (column) -->
+        <!-- Start of Photograph div (column) -->
         <div class="col-md-6">
             <div id="imgContainer">
              <span id="photo-link">
@@ -159,8 +171,9 @@
              </span>
             </div>
         </div>
-        <!-- End of Photo DIV (column) -->
+        <!-- End of Photograph div (column) -->
         <div class="col-md-6">
+            <!-- Start of form -->
             <form id="phototagging" role="form">
 
                 <div class="form-group">
@@ -177,16 +190,15 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label" for="provenance">Provenance: </label>
-                    <input type="text" name="provenance" id="provenance" class="form-control fields"
-                           placeholder="The provenance is where it comes from on the site">
-                </div>
-
-
-                <div class="form-group">
                     <label class="control-label" for="scale">Scale of drawing: </label>
                     <input type="text" name="scale" id="scale" class="form-control fields"
                            placeholder="Look for scale below the drawing">
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="provenance">Provenance: </label>
+                    <input type="text" name="provenance" id="provenance" class="form-control fields"
+                           placeholder="The provenance is where it comes from on the site">
                 </div>
 
                 <div class="form-group">
@@ -200,6 +212,7 @@
                     <input type="text" name="distribution" id="distribution" class="form-control fields"
                            placeholder="The distribution is generally at the bottom left eg San Diego">
                 </div>
+
                 <hr/>
 
                 <div class="form-group">
@@ -215,8 +228,11 @@
                 </div>
 
             </form>
+            <!-- End of form -->
+
         </div>
     </div>
+
     <!-- Feedback items for the user -->
     <p>You are working now on task: <span id="task-id" class="label label-warning">#</span></p>
     <p>You have completed: <span id="done" class="label label-info"></span> tasks from
@@ -229,7 +245,7 @@
 
 </div>
 
-
+<-- The tutorial code -->
 <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -250,7 +266,7 @@
             </div>
 
             <div id="1" class="modal-body" style="display:none">
-           
+
                 <p>
                     Therefore the field list we would like is as follows:
                 </p>
@@ -284,6 +300,7 @@
         </div>
     </div>
 </div>
+<-- End of tutorial code -->
 
 <!-- End of skeleton -->
 <script type="text/javascript">
@@ -292,6 +309,7 @@
                 placement: $(this).data("placement") || 'top'
             });
         });
+
 
 </script>
 
@@ -322,6 +340,7 @@
     showStep('next');
     $("#modal").modal('show');
 
+
 </script>
 
 <!-- Client side scripts -->
@@ -332,12 +351,14 @@ Modernizr.load({
   nope: '/static/js/vendor/json2.min.js'
 });
 
+
 </script>
 
 <script type="text/javascript">
     $(window).resize(function(){
         console.log('Window resized');
     });
+
 
 </script>
 
@@ -355,6 +376,7 @@ Modernizr.load({
             $('a[rel]').tooltip({'placement': 'left'});
         });
     }
+
 
 </script>
 
@@ -375,6 +397,7 @@ Modernizr.load({
             deferred.resolve(task);
         }
     });
+
 
 </script>
 
@@ -409,7 +432,10 @@ Modernizr.load({
                         $("html, body").animate({ scrollTop: 0 }, "slow");
                         $("#success").fadeIn(500).fadeOut(500);
                         $("#loading").fadeIn(500).fadeOut(500);
+
+                        // The line below resets the form when next loading a task
                         $('.fields').val('');
+
                         deferred.resolve();
                     });
                 } else {
@@ -425,9 +451,10 @@ Modernizr.load({
     });
     pybossa.run('buhen1958');
 
+
 </script>
 
-<!-- App specific styles -->
+<!-- Project specific styles -->
 <style>
     .messageMargin {
     margin-top: 15px;
