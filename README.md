@@ -1,8 +1,6 @@
 Photographic transcription of the Egypt Exploration Society Archives
 ====================================================================
 
-[![DOI](https://zenodo.org/badge/19055/MicroPasts/egyptExplorationSocietyBuhen.svg)](https://zenodo.org/badge/latestdoi/19055/MicroPasts/egyptExplorationSocietyBuhen)
-
 An application for interacting with the Egypt Exploration Society Flickr stream to produce structured, transcribed data
 from their rich image archive. This version is for the transcription of the Buhen archive.
 

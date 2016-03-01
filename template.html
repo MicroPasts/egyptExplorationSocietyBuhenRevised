@@ -124,7 +124,7 @@
         <img src="http://crowdsourced.micropasts.org/static/img/MP_SQUARE_notype.png" width="200" height="200"/>
         <div class="alert-actions">
             <!-- Go back to project info page -->
-            <a class="btn-default btn" href="/project/buhen1958">Go back</a>
+            <a class="btn-default btn" href="/project/buhen1962">Go back</a>
             <!-- End of go back. -->
             <a class="btn-default btn" href="/project">or, try another project</a>
         </div>
@@ -195,9 +195,9 @@
 
                 <div class="form-group">
                     <label class="control-label" for="description">Description of object: </label>
-                    <input type="text" name="description" id="description" class="form-control fields"
+                    <textarea rows="5" name="description" id="description" class="form-control fields"
                            placeholder="The description is just above the drawing" rel="tooltip" data-toggle="tooltip"
-                           data-placement="bottom" title="The description is just above the drawing">
+                           data-placement="bottom" title="The description is just above the drawing"></textarea>
                 </div>
 
                 <div class="form-group">
@@ -214,8 +214,8 @@
 
                 <div class="form-group">
                     <label class="control-label" for="provenance">Provenance: </label>
-                    <input type="text" name="provenance" id="provenance" class="form-control fields"
-                           placeholder="The provenance is where it comes from on the site">
+                    <textarea rows="5" name="provenance" id="provenance" class="form-control fields"
+                           placeholder="The provenance is where it comes from on the site"></textarea>
                 </div>
 
                 <div class="form-group">
@@ -268,14 +268,14 @@
         <div class="modal-content">
 
             <div class="modal-header">
-                <h3 class="lead">Egypt Exploration Society Buhen Season 1958</h3>
+                <h3 class="lead">Egypt Exploration Society Buhen Season 1962 - 1963</h3>
             </div>
 
             <div id="0" class="modal-body" style="display:none">
                 <img src="http://www.ees.ac.uk/images/logo.gif" class="pull-right img-circle"/>
                 <p>
                     This project is an application for the crowd-sourcing of data from archival cards that
-                    have been generated from the Egypt Exploration Society's Buhen digging season 1958. Each card
+                    have been generated from the Egypt Exploration Society's Buhen digging season 1962 - 1963. Each card
                     contains very structured data relating to each object recorded, and these data are what we would
                     like you to transcribe.
                 </p>
@@ -376,7 +376,7 @@ Modernizr.load({
 <!-- Load user progress -->
 <script type="text/javascript">
     function loadUserProgress() {
-        pybossa.userProgress('buhen1958').done(function(data){
+        pybossa.userProgress('buhen1962').done(function(data){
             console.log("Total answers done for user: " + data.done);
             var pct = Math.round((data.done*100)/data.total);
             $("#progress").css("width", pct.toString() +"%");
@@ -458,7 +458,7 @@ Modernizr.load({
             $("#finish").fadeIn(500);
         }
     });
-    pybossa.run('buhen1958');
+    pybossa.run('buhen1962');
 </script>
 
 <!-- Project specific styles -->

@@ -1,5 +1,5 @@
 This application enables the transcription of archive cards from the Egypt Exploration Society excavations at Buhen 
-during 1958. Images will be drawn from the EES Flickr feed and redisplayed in the browser window. They would like the 
+during 1962 - 1963. Images will be drawn from the EES Flickr feed and redisplayed in the browser window. They would like the 
 following information to be transcribed for them to create a searchable archive for their records. These fields are:
 
 * Description
@@ -20,4 +20,4 @@ This application is on behalf of the Egypt Exploration Society.
 ## Find the code on GitHub
 
 [![](https://micropasts-other.s3.amazonaws.com/other/github_logo.png)]
-(https://github.com/MicroPasts/egyptExplorationSocietyBuhen)
+(https://github.com/MicroPasts/egyptExplorationSocietyBuhenRevised)
